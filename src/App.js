@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
+// import HomePage from './components/HomePage';
+import UsedTechnologies from './components/UsedTechnologies';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Navigation from './components/Navigation';
+
+// ? importamos Bootstrap
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation />
+      <Route path="/" exact component={AboutMe}/>
+      <Route path="/contact" exact component={Contact}/>
+    </Router>
   );
 }
 
